@@ -1,19 +1,16 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
-<html>
-  {% include head.html %}
-  <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      {% include header.html %}
-      {% include menu-left.html %}
-      <main class="mdl-layout__content">
-        <div class="page-content">
-          <div class="wrapper">
-            {{ content }}
-          </div>
-        </div>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" {% if page.main-class %}class="post-{{ page.main-class }}"{% endif %}>
+    {% include head.html %}
+    <body>
+        {% include svg-icons.html %}
+        {% include header-default.html %}
+            <section class="content">
+                {{ content }}
+            </section>
         {% include footer.html %}
-      </main>
-    </div>
-  {% include google-analytics.html %}
-  </body>
+    </body>
 </html>

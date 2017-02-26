@@ -1,17 +1,42 @@
 # Site settings
-title: Smart Material Theme
-email: your-email@domain.com
-description: Slick Material Design theme for Jekyll powered by Material Design Lite.
-baseurl: "/jekyll-smart-material" # the subpath of your site, e.g. /blog/
-url: "http://ssokurenko.github.io" # the base hostname & protocol for your site
-copyright: '&copy; 2015-2016 Smart Material Theme'
+title: Willian Justen - Desenvolvedor Front End
+description: A blog about lorem ipsum dolor sit amet
+baseurl: "/cards-jekyll-template" # the subpath of your site, e.g. /blog
+url: "https://willianjusten.com.br" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+
+# User settings
+username: Lorem Ipsum
+user_description: Anon Developer at Lorem Ipsum Dolor
+email: anon@anon.com
+twitter_username: lorem_ipsum
+github_username:  lorem_ipsum
+gplus_username:  lorem_ipsum
+disqus_username: lorem_ipsum
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+permalink: /:title/
 
-# Custom theme could be generated at: https://getmdl.io/customize/index.html
-material_theme: blue-deep_orange
 
-# Google Analytics account ID (UA-XXXXXXXX-X)
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
 
-google-analytics-ua: UA-84475574-1
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: Series
+    url: /series
+  - title: Tags
+    url: /tags
+  - title: About Me
+    url: /about
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
