@@ -56,7 +56,7 @@ yandex_site_verification :
 # Social Sharing
 twitter:
   username               :
-facebook:
+facebook                 :
   username               :
   app_id                 :
   publisher              :
@@ -78,10 +78,10 @@ analytics:
 # Site Author
 author:
   name             : "Jingyu"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  avatar           : "/assets/images/buildSucceeded.jpeg"
+  bio              : "ios developer"
+  location         : "Korea"
+  email            : "kjingyu91@gmail.com"
   uri              :
   bitbucket        :
   codepen          :
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "jingyu91"
   google_plus      :
   keybase          :
   instagram        :
