@@ -1,54 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-07-14T14:52:30+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">Markup: Another Post with Images</title><link href="http://localhost:4000/markup-more-images/" rel="alternate" type="text/html" title="Markup: Another Post with Images" /><published>2013-05-22T00:00:00+09:00</published><updated>2013-05-22T00:00:00+09:00</updated><id>http://localhost:4000/markup-more-images</id><content type="html" xml:base="http://localhost:4000/markup-more-images/">&lt;p&gt;Here are some examples of what a post with images might look like. If you want to display two or three images next to each other responsively use &lt;code class=&quot;highlighter-rouge&quot;&gt;figure&lt;/code&gt; with the appropriate &lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;. Each instance of &lt;code class=&quot;highlighter-rouge&quot;&gt;figure&lt;/code&gt; is auto-numbered and displayed in the caption.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-08T11:56:42+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">[git] 자주 쓰는 git명령어</title><link href="http://localhost:4000/git-%EC%9E%90%EC%A3%BC-%EC%93%B0%EB%8A%94-git%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="alternate" type="text/html" title="[git] 자주 쓰는 git명령어" /><published>2017-09-08T00:00:00+09:00</published><updated>2017-09-08T00:00:00+09:00</updated><id>http://localhost:4000/%5Bgit%5D%20%EC%9E%90%EC%A3%BC%20%EC%93%B0%EB%8A%94%20git%EB%AA%85%EB%A0%B9%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/git-%EC%9E%90%EC%A3%BC-%EC%93%B0%EB%8A%94-git%EB%AA%85%EB%A0%B9%EC%96%B4/">&lt;h2 id=&quot;커밋-되돌리기&quot;&gt;커밋 되돌리기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git reset HEAD^&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;figures-for-images-or-video&quot;&gt;Figures (for images or video)&lt;/h3&gt;
+&lt;p&gt;이 명령을 사용하면 커밋 하나를 되돌릴 수 있다. 두개를 되돌리려면&lt;/p&gt;
 
-&lt;h4 id=&quot;one-up&quot;&gt;One Up&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$git reset HEAD~2&lt;/code&gt;&lt;/p&gt;
 
-&lt;figure&gt;
-	&lt;a href=&quot;http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg&quot;&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;figcaption&gt;&lt;a href=&quot;http://www.flickr.com/photos/80901381@N04/7758832526/&quot; title=&quot;Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr&quot;&gt;Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr&lt;/a&gt;.&lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;h2 id=&quot;원격-레포-커밋-되돌리기&quot;&gt;원격 레포 커밋 되돌리기&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git push origin +ios&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.&lt;/p&gt;
+&lt;p&gt;이렇게 +를 붙여주면 경고는 무시하고 데이터가 손실되도 push한다.&lt;/p&gt;
 
-&lt;h4 id=&quot;two-up&quot;&gt;Two Up&lt;/h4&gt;
+&lt;h2 id=&quot;commit했었던-곳으로-돌아가기&quot;&gt;commit했었던 곳으로 돌아가기&lt;/h2&gt;
+&lt;p&gt;먼저&lt;/p&gt;
 
-&lt;p&gt;Apply the &lt;code class=&quot;highlighter-rouge&quot;&gt;half&lt;/code&gt; class like so to display two images side by side that share the same caption.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git reflog&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;half&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/images/image-filename-1-large.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/images/image-filename-1.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/images/image-filename-2-large.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/assets/images/image-filename-2.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Caption describing these two images.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
+&lt;p&gt;로 해당 HEAD번호를 확인한다.
+￼&lt;/p&gt;
+
+&lt;p&gt;ex) 배너 예외처리로 돌아가기&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/post2/image1.png&amp;quot;&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git reset —hard HEAD@{21}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;원격-파일-삭제하기&quot;&gt;원격 파일 삭제하기&lt;/h2&gt;
+
+&lt;p&gt;.gitignore를 올리기전에 xcuserstate 를 원격지로 푸시했다.
+이후에 필요없는 breakPoint같은 파일이 자꾸 깃 스테이지에 올라간다.&lt;/p&gt;
+
+&lt;p&gt;원격 저장소에 있는 파일을 지우려면 git 명령어를 통해 삭제 후 푸시를 해줘야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git rm —cached [flileName]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;git rm 은 로컬과 원격을 모두 삭제하므로 —cached를 꼭 붙여줘야 한다.&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">커밋 되돌리기 $ git reset HEAD^</summary></entry><entry><title type="html">[ios] status bar 다루기</title><link href="http://localhost:4000/ios-status-bar-%EB%8B%A4%EB%A3%A8%EA%B8%B0/" rel="alternate" type="text/html" title="[ios] status bar 다루기" /><published>2017-08-19T00:00:00+09:00</published><updated>2017-08-19T00:00:00+09:00</updated><id>http://localhost:4000/%5Bios%5D%20status%20bar%20%EB%8B%A4%EB%A3%A8%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/ios-status-bar-%EB%8B%A4%EB%A3%A8%EA%B8%B0/">&lt;h2 id=&quot;status-bar&quot;&gt;status bar&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;status bar color
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20))
+      statusBar.backgroundColor = .black // 원하는 색상 지정
+      window?.rootViewController?.view.addSubview(statusBar)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;or
+```
+extension UIApplication {
+  var statusBarView: UIView? {
+      return value(forKey: “statusBar”) as? UIView
+  }
+}&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;And you’ll get something that looks like this:&lt;/p&gt;
+&lt;p&gt;// insert code in AppDelegate
+UIApplication.shared.statusBarView?.backgroundColor = .black&lt;/p&gt;
 
-&lt;figure class=&quot;half&quot;&gt;
-	&lt;a href=&quot;http://placehold.it/1200x600.JPG&quot;&gt;&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;a href=&quot;http://placehold.it/1200x600.jpeg&quot;&gt;&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;&lt;/a&gt;
-	&lt;figcaption&gt;Two images.&lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;p&gt;```&lt;/p&gt;
 
-&lt;h4 id=&quot;three-up&quot;&gt;Three Up&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;status bar text color
+text 색상은 white와 black 두 종류로만 바꿀 수 있다.
+    &lt;ol&gt;
+      &lt;li&gt;info.plist 수정&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Apply the &lt;code class=&quot;highlighter-rouge&quot;&gt;third&lt;/code&gt; class like so to display three images side by side that share the same caption.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/post1/plist.png&amp;quot;&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;figure&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;third&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-1.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-2.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/image-filename-3.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;figcaption&amp;gt;&lt;/span&gt;Caption describing these three images.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figcaption&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;p&gt;info.plist에 View controller-based status bar appearance : NO 속성을 추가한다.&lt;/p&gt;
 
-&lt;p&gt;And you’ll get something that looks like this:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;AppDelegate 수정&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;figure class=&quot;third&quot;&gt;
-	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;
-	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;
-	&lt;img src=&quot;http://placehold.it/600x300.jpg&quot; /&gt;
-	&lt;figcaption&gt;Three images.&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="sample post" /><category term="images" /><category term="test" /><summary type="html">Examples and code for displaying images in posts.</summary></entry></feed>
+&lt;p&gt;AppDelegate - didFinishLaunchingWithOptions메서드 안에 다음 소스를 추가한다.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;UIApplication.shared.statusBarStyle = .lightContent&lt;/code&gt; // white color
+or
+&lt;code class=&quot;highlighter-rouge&quot;&gt;UIApplication.shared.statusBarStyle = .default&lt;/code&gt; // black color&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">status bar</summary></entry></feed>
