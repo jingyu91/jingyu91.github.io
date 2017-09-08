@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c65e35e-daec-4fcb-9185-6d236badff8e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/post1/plist.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/post2/image1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/preferred-vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2017-09-08-[git] 자주 쓰는 git명령어.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2013-05-22-markup-more-images.md" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/_posts/2017-08-19-[ios]status bar 다루기.md" afterPath="$PROJECT_DIR$/_posts/2017-08-19-[ios] status bar 다루기.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2017-08-19-[ios] status bar 다루기.md" afterPath="$PROJECT_DIR$/_posts/2017-08-19-[ios] status bar 다루기.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2017-09-08-[git] 자주 쓰는 git명령어.md" afterPath="$PROJECT_DIR$/_posts/2017-09-08-[git] 자주 쓰는 git명령어.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/feed.xml" afterPath="$PROJECT_DIR$/_site/feed.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/index.html" afterPath="$PROJECT_DIR$/_site/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
     </list>
     <ignored path="jingyu91.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,12 +38,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2017-08-19-[ios] status bar 다루기.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2017-08-19-[ios] status bar 다루기.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2017-08-19-[ios] status bar 다루기.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="360">
-                <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <first_editor relative-caret-position="435">
+                <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="37" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -58,12 +51,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2017-09-08-[git] 자주 쓰는 git명령어.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2017-09-08-[git] 자주 쓰는 git명령어.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2017-09-08-[git] 자주 쓰는 git명령어.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="345">
-                <caret line="23" column="7" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+              <first_editor relative-caret-position="405">
+                <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -116,7 +109,7 @@
             <state relative-caret-position="0">
               <caret line="0" column="470" lean-forward="false" selection-start-line="0" selection-start-column="470" selection-end-line="0" selection-end-column="470" />
               <folding>
-                <marker date="1504839325000" expanded="true" signature="4712:4729" ph="..." />
+                <marker date="1504839885000" expanded="true" signature="4757:4774" ph="..." />
               </folding>
             </state>
           </provider>
@@ -138,13 +131,13 @@
             <state relative-caret-position="1890">
               <caret line="126" column="60" lean-forward="false" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
               <folding>
-                <marker date="1504839325000" expanded="true" signature="6262:6266" ph="..." />
-                <marker date="1504839325000" expanded="true" signature="6339:7101" ph="..." />
-                <marker date="1504839325000" expanded="true" signature="6354:7090" ph="..." />
-                <marker date="1504839325000" expanded="true" signature="6479:6830" ph="..." />
-                <marker date="1504839325000" expanded="true" signature="6507:6823" ph="..." />
-                <marker date="1504839325000" expanded="false" signature="6869:6875" ph="©" />
-                <marker date="1504839325000" expanded="false" signature="6956:6961" ph="&amp;" />
+                <marker date="1504839885000" expanded="true" signature="6264:6268" ph="..." />
+                <marker date="1504839885000" expanded="true" signature="6341:7103" ph="..." />
+                <marker date="1504839885000" expanded="true" signature="6356:7092" ph="..." />
+                <marker date="1504839885000" expanded="true" signature="6481:6832" ph="..." />
+                <marker date="1504839885000" expanded="true" signature="6509:6825" ph="..." />
+                <marker date="1504839885000" expanded="false" signature="6871:6877" ph="©" />
+                <marker date="1504839885000" expanded="false" signature="6958:6963" ph="&amp;" />
               </folding>
             </state>
           </provider>
@@ -168,6 +161,7 @@
         <option value="$PROJECT_DIR$/_posts/2017-08-19-[ios]status bar 다루기.md" />
         <option value="$PROJECT_DIR$/_posts/2017-09-08-[git]자주 쓰는 git명령어.md" />
         <option value="$PROJECT_DIR$/_posts/2017-08-19-[ios] status bar 다루기.md" />
+        <option value="$PROJECT_DIR$/_posts/2017-09-08-[git] 자주 쓰는 git명령어.md" />
       </list>
     </option>
   </component>
@@ -292,12 +286,12 @@
       <workItem from="1490504208110" duration="526000" />
       <workItem from="1503291121667" duration="46000" />
       <workItem from="1503291192549" duration="2090000" />
-      <workItem from="1504837309314" duration="1650000" />
+      <workItem from="1504837309314" duration="2170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4959000" />
+    <option name="totallyTimeSpent" value="5479000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1216" y="-1057" width="1920" height="1057" extended-state="0" />
@@ -349,7 +343,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="470" lean-forward="false" selection-start-line="0" selection-start-column="470" selection-end-line="0" selection-end-column="470" />
           <folding>
-            <marker date="1504839325000" expanded="true" signature="4712:4729" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="4757:4774" ph="..." />
           </folding>
         </state>
       </provider>
@@ -400,13 +394,13 @@
         <state relative-caret-position="1890">
           <caret line="126" column="60" lean-forward="false" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
           <folding>
-            <marker date="1504839325000" expanded="true" signature="6262:6266" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6339:7101" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6354:7090" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6479:6830" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6507:6823" ph="..." />
-            <marker date="1504839325000" expanded="false" signature="6869:6875" ph="©" />
-            <marker date="1504839325000" expanded="false" signature="6956:6961" ph="&amp;" />
+            <marker date="1504839885000" expanded="true" signature="6264:6268" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6341:7103" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6356:7092" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6481:6832" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6509:6825" ph="..." />
+            <marker date="1504839885000" expanded="false" signature="6871:6877" ph="©" />
+            <marker date="1504839885000" expanded="false" signature="6958:6963" ph="&amp;" />
           </folding>
         </state>
       </provider>
@@ -494,7 +488,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="470" lean-forward="false" selection-start-line="0" selection-start-column="470" selection-end-line="0" selection-end-column="470" />
           <folding>
-            <marker date="1504839325000" expanded="true" signature="4712:4729" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="4757:4774" ph="..." />
           </folding>
         </state>
       </provider>
@@ -512,13 +506,13 @@
         <state relative-caret-position="1890">
           <caret line="126" column="60" lean-forward="false" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
           <folding>
-            <marker date="1504839325000" expanded="true" signature="6262:6266" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6339:7101" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6354:7090" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6479:6830" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6507:6823" ph="..." />
-            <marker date="1504839325000" expanded="false" signature="6869:6875" ph="©" />
-            <marker date="1504839325000" expanded="false" signature="6956:6961" ph="&amp;" />
+            <marker date="1504839885000" expanded="true" signature="6264:6268" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6341:7103" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6356:7092" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6481:6832" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6509:6825" ph="..." />
+            <marker date="1504839885000" expanded="false" signature="6871:6877" ph="©" />
+            <marker date="1504839885000" expanded="false" signature="6958:6963" ph="&amp;" />
           </folding>
         </state>
       </provider>
@@ -582,7 +576,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="470" lean-forward="false" selection-start-line="0" selection-start-column="470" selection-end-line="0" selection-end-column="470" />
           <folding>
-            <marker date="1504839325000" expanded="true" signature="4712:4729" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="4757:4774" ph="..." />
           </folding>
         </state>
       </provider>
@@ -600,13 +594,13 @@
         <state relative-caret-position="1890">
           <caret line="126" column="60" lean-forward="false" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
           <folding>
-            <marker date="1504839325000" expanded="true" signature="6262:6266" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6339:7101" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6354:7090" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6479:6830" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6507:6823" ph="..." />
-            <marker date="1504839325000" expanded="false" signature="6869:6875" ph="©" />
-            <marker date="1504839325000" expanded="false" signature="6956:6961" ph="&amp;" />
+            <marker date="1504839885000" expanded="true" signature="6264:6268" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6341:7103" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6356:7092" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6481:6832" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6509:6825" ph="..." />
+            <marker date="1504839885000" expanded="false" signature="6871:6877" ph="©" />
+            <marker date="1504839885000" expanded="false" signature="6958:6963" ph="&amp;" />
           </folding>
         </state>
       </provider>
@@ -768,7 +762,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="470" lean-forward="false" selection-start-line="0" selection-start-column="470" selection-end-line="0" selection-end-column="470" />
           <folding>
-            <marker date="1504839325000" expanded="true" signature="4712:4729" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="4757:4774" ph="..." />
           </folding>
         </state>
       </provider>
@@ -786,13 +780,13 @@
         <state relative-caret-position="1890">
           <caret line="126" column="60" lean-forward="false" selection-start-line="126" selection-start-column="60" selection-end-line="126" selection-end-column="60" />
           <folding>
-            <marker date="1504839325000" expanded="true" signature="6262:6266" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6339:7101" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6354:7090" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6479:6830" ph="..." />
-            <marker date="1504839325000" expanded="true" signature="6507:6823" ph="..." />
-            <marker date="1504839325000" expanded="false" signature="6869:6875" ph="©" />
-            <marker date="1504839325000" expanded="false" signature="6956:6961" ph="&amp;" />
+            <marker date="1504839885000" expanded="true" signature="6264:6268" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6341:7103" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6356:7092" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6481:6832" ph="..." />
+            <marker date="1504839885000" expanded="true" signature="6509:6825" ph="..." />
+            <marker date="1504839885000" expanded="false" signature="6871:6877" ph="©" />
+            <marker date="1504839885000" expanded="false" signature="6958:6963" ph="&amp;" />
           </folding>
         </state>
       </provider>
@@ -810,17 +804,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-09-08-[git] 자주 쓰는 git명령어.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="345">
-            <caret line="23" column="7" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-08-19-[ios] status bar 다루기.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -830,8 +813,19 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="360">
-            <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <first_editor relative-caret-position="435">
+            <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="37" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-09-08-[git] 자주 쓰는 git명령어.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="405">
+            <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
             <folding />
           </first_editor>
           <second_editor />
