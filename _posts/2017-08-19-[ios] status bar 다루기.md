@@ -96,10 +96,3 @@ extension UINavigationController {
 }
 
 ```
-
-* status bar color
-
-
-* status bar text color
-text 색상은 white와 black 두 종류로만 바꿀 수 있다.
-
