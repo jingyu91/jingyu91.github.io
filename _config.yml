@@ -7,18 +7,18 @@
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Jingyu's Playground"
+title                    : "Jingyu playground"
 title_separator          : "-"
 name                     : "Jingyu"
 description              : ""
 url                      : "https://jingyu91.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "jingyu91/jingyu91.github.io"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : "/assets/images/buildSucceeded.jpeg"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : "facebook"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -56,7 +56,7 @@ yandex_site_verification :
 # Social Sharing
 twitter:
   username               :
-facebook:
+facebook                 :
   username               :
   app_id                 :
   publisher              :
@@ -78,10 +78,10 @@ analytics:
 # Site Author
 author:
   name             : "Jingyu"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an IOS Developer."
+  avatar           : "/assets/images/buildSucceeded.jpeg"
+  bio              : "ios developer"
   location         : "Korea"
-  email            :
+  email            : "kjingyu91@gmail.com"
   uri              :
   bitbucket        :
   codepen          :
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/jingyu91"
+  github           : "jingyu91"
   google_plus      :
   keybase          :
   instagram        :
@@ -174,7 +174,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul
 
 
 # Plugins
@@ -241,6 +241,6 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments:  true
       share: true
       related: true
