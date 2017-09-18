@@ -46,7 +46,7 @@ Appfile에서 애플 개발자 계정을 설정하고 Fastfile로 빌드할 lane
  
 ##파일 설정
 
-**Appfile**
+- **Appfile**
 
 여러 개발자계정으로 빌드를 할 경우에 Fastfile에서 설정한 lane이름으로 분기하여 id를 설정할 수 있다.
 
@@ -65,7 +65,7 @@ end
 ```
 
 
-**.env**
+- **.env**
 
 각각의 프로젝트에서 Fastfile을 다시 작성하는것보다 .env파일을 사용하여 프로젝트이름이나 url등을 변수로 선언하면
 
@@ -83,29 +83,34 @@ end
   BADGE_REMOVE_COMMIT="../{PROJECT_LOCATION}/Assets.xcassets/AppIcon.appiconset"
 ```
 
-**Fastfile**
+---
 
-Fastfile은 lane시작 전에 수행할 코드를 넣는 before_all do ~ end과 여러 lane들 그리고, lane작업 후에 호출되는 
+*- *Fastfile**
 
-after_all do ~ end과 error do ~ end로 구성할 수 있다.
+Fastfile은 lane시작 전에 수행할 코드를 넣는 `before_all do ~ end`과 여러 lane들 그리고, lane작업 후에 호출되는 
+
+`after_all do ~ end`과 `error do ~ end`로 구성할 수 있다.
 
 보통 before_all에 인증서 관련한 명령과 pod install수행 구문들을 넣어주고 after_all이나 error 에 슬랙 메시지, git관련 명령
 들을 수행하면 된다.
 
+---
 
 ## Action
 Action은 Fastlane에서 기본적으로 내장되어있는 기능으로 test, build, screenshot, code signing등이 있다.
 https://docs.fastlane.tools/actions/
 
-
 ## Plugin
 플러그인은 부가적인 option이며 fastlane에서 자체적으로 제공하는것이 아니라 오픈소스 컨트리뷰터들이 만들어서 제공하는 기능이다.
 
-사용하려면 'fastlane add_plugin [plugin명]' 으로 따로 설치해야한다.
+사용가능한 플러그인 목록
+https://docs.fastlane.tools/plugins/available-plugins/
+
+사용하려면 `fastlane add_plugin [plugin명]` 으로 따로 설치해야한다.
 
 fastlane은 루비로 되어있어서 루비를 잘 다룬다면 plugin을 만들어 쓸 수 있을 것 같다.
 
-즐겨쓰는 plugin으로는 badge 인데 앱 아이콘이 비슷해서 헷갈리지 않아서 유용하다.
+개인적으로 유용하게 쓰고 있는 plugin으로는 badge 인데 앱 아이콘이 비슷해서 헷갈리지 않도록 앱 아이콘에 뱃지를 달 수 있다
 https://github.com/HazAT/fastlane-plugin-badge
 
 ```
@@ -116,38 +121,29 @@ fastlane add_plugin badge
 
 ## 빌드실행
 
-설정이 끝나고 터미널에서 `fastlane [lane명]` 을 입력하면 빌드가 된다. 
+설정이 끝나고 터미널에서 `fastlane [lane명]` 을 입력하면 빌드가 시작된다. 
+
 #### ios all
-make enterprise ipa, adhoc ipa and upload App
 ```
-fastlane ios all
+fastlane all
 ```
 
 #### ios release
-Deploy a new version to the App Store
-
 ```
-fastlane ios release
+fastlane release
 ```
 
 #### ios adhoc
-Ad-Hoc Build
 ```
-fastlane ios adhoc
+fastlane adhoc
 ```
-
 
 #### ios enterprise
-Enterprise Build
 ```
-fastlane ios enterprise
+fastlane enterprise
 ```
-
 
 ## About Fastlane
 For more information about Fastlane -> https://fastlane.tools/
 
 Fastlane github -> https://github.com/fastlane/fastlane
-
-Fastlane plugin -> https://docs.fastlane.tools/plugins/available-plugins/
-
