@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Jingyu playground"
+title                    : "Jingyu's Playground"
 title_separator          : "-"
 name                     : "Jingyu"
 description              : ""
@@ -79,8 +79,8 @@ analytics:
 author:
   name             : "Jingyu"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  bio              : "I am an IOS Developer."
+  location         : "Korea"
   email            :
   uri              :
   bitbucket        :
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "https://github.com/jingyu91"
   google_plus      :
   keybase          :
   instagram        :
