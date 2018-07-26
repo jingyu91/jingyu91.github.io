@@ -1,4 +1,172 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-09-11T00:32:56+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">[git] 자주 쓰는 git명령어</title><link href="http://localhost:4000/git-%EC%9E%90%EC%A3%BC-%EC%93%B0%EB%8A%94-git%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="alternate" type="text/html" title="[git] 자주 쓰는 git명령어" /><published>2017-09-08T00:00:00+09:00</published><updated>2017-09-08T00:00:00+09:00</updated><id>http://localhost:4000/%5Bgit%5D%20%EC%9E%90%EC%A3%BC%20%EC%93%B0%EB%8A%94%20git%EB%AA%85%EB%A0%B9%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/git-%EC%9E%90%EC%A3%BC-%EC%93%B0%EB%8A%94-git%EB%AA%85%EB%A0%B9%EC%96%B4/">&lt;h2 id=&quot;커밋-되돌리기&quot;&gt;커밋 되돌리기&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-07-26T18:42:59+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">Fastlane으로 빌드 자동화 설정하기</title><link href="http://localhost:4000/ios/ios-%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94-fastlane-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Fastlane으로 빌드 자동화 설정하기" /><published>2017-09-18T00:00:00+09:00</published><updated>2017-09-18T00:00:00+09:00</updated><id>http://localhost:4000/ios/%5Bios%5D%20%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%20fastlane%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/ios/ios-%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94-fastlane-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/">&lt;p&gt;외주 개발을 하게 되면서 서로 다른 애플 개발자 계정으로 enterprise, adhoc빌드, 스토어 업로드를 처리하다보니&lt;/p&gt;
+
+&lt;p&gt;빌드를 내는데 걸리는 시간이 많아졌고, 상당히 귀찮은 작업이 되었다.&lt;/p&gt;
+
+&lt;p&gt;당시 개발하던 mac의 사양도 높지 않아서 빌드속도도 느릴뿐더러 xcode 스토어 업로드에서 마지막에 알수없는 에러가 발생하였는데&lt;/p&gt;
+
+&lt;p&gt;한시간 넘게 계속 재시도하니까 업로드에 성공한적도 있었다.&lt;/p&gt;
+
+&lt;p&gt;fastlane을 사용하면 이러한 문제도 해결할 수 있고, 추가적으로 좋은 기능들도 이용할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;fastlane 설치 및 파일설명&lt;/li&gt;
+  &lt;li&gt;Appfile&lt;/li&gt;
+  &lt;li&gt;.env&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fastfile&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Action&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Plugin&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;build multiple targets with a single command&lt;/li&gt;
+  &lt;li&gt;get version string&lt;/li&gt;
+  &lt;li&gt;slack message&lt;/li&gt;
+  &lt;li&gt;appicon with badge&lt;/li&gt;
+  &lt;li&gt;upload ipa and plist to the server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##fastlane 설치&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;터미널에서 다음 명령어를 입력한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;sudo gem install fastlane –verbose`&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;해당 프로젝트로 이동한 후 다음 명령어를 입력한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fastlane init&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;생성된 Appfile, Fastfile, .env파일을 작성한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Appfile에서 애플 개발자 계정을 설정하고 Fastfile로 빌드할 lane을 작성한다.(가장 중요!)&lt;/p&gt;
+
+&lt;p&gt;.env파일은 전역변수를 설정하여 Fastfile에서 편리하게 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;##파일 설정&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Appfile&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;여러 개발자계정으로 빌드를 할 경우에 Fastfile에서 설정한 lane이름으로 분기하여 id를 설정할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for_lane :first_lane do
+     app_identifier &quot;ONE&quot;
+     apple_id &quot;ONE&quot;
+     team_id &quot;ONE&quot;
+end
+
+for_lane :second_lane do
+     app_identifier &quot;TWO&quot;
+     apple_id &quot;TWO&quot;
+     team_id &quot;TWO&quot;
+end
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;.env&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;각각의 프로젝트에서 Fastfile을 다시 작성하는것보다 .env파일을 사용하여 프로젝트이름이나 url등을 변수로 선언하면&lt;/p&gt;
+
+&lt;p&gt;약간의 Fastfile을 수정하는것만으로 다른 프로젝트에서도 용이하게 사용할 수 있다.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  SLACK_URL=&quot;&quot;  # slack hook address
+ 
+  RELEASE_TARGET=&quot;&quot;
+  ADHOC_TARGET=&quot;&quot;
+  ENTERPRISE_TARGET=&quot;&quot;
+ 
+  # git checkout for removing badge
+  BADGE_REMOVE_COMMIT=&quot;../{PROJECT_LOCATION}/Assets.xcassets/AppIcon.appiconset&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;*- *Fastfile**&lt;/p&gt;
+
+&lt;p&gt;Fastfile은 lane시작 전에 수행할 코드를 넣는 &lt;code class=&quot;highlighter-rouge&quot;&gt;before_all do ~ end&lt;/code&gt;과 여러 lane들 그리고, lane작업 후에 호출되는&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;after_all do ~ end&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;error do ~ end&lt;/code&gt;로 구성할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;보통 before_all에 인증서 관련한 명령과 pod install수행 구문들을 넣어주고 after_all이나 error 에 슬랙 메시지, git관련 명령
+들을 수행하면 된다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;action&quot;&gt;Action&lt;/h2&gt;
+&lt;p&gt;Action은 Fastlane에서 기본적으로 내장되어있는 기능으로 test, build, screenshot, code signing등이 있다.
+https://docs.fastlane.tools/actions/&lt;/p&gt;
+
+&lt;h2 id=&quot;plugin&quot;&gt;Plugin&lt;/h2&gt;
+&lt;p&gt;플러그인은 부가적인 option이며 fastlane에서 자체적으로 제공하는것이 아니라 오픈소스 컨트리뷰터들이 만들어서 제공하는 기능이다.&lt;/p&gt;
+
+&lt;p&gt;사용가능한 플러그인 목록
+https://docs.fastlane.tools/plugins/available-plugins/&lt;/p&gt;
+
+&lt;p&gt;사용하려면 &lt;code class=&quot;highlighter-rouge&quot;&gt;fastlane add_plugin [plugin명]&lt;/code&gt; 으로 따로 설치해야한다.&lt;/p&gt;
+
+&lt;p&gt;fastlane은 루비로 되어있어서 루비를 잘 다룬다면 plugin을 만들어 쓸 수 있을 것 같다.&lt;/p&gt;
+
+&lt;p&gt;개인적으로 유용하게 쓰고 있는 plugin으로는 badge 인데 앱 아이콘이 비슷해서 헷갈리지 않도록 앱 아이콘에 뱃지를 달 수 있다
+https://github.com/HazAT/fastlane-plugin-badge&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane add_plugin badge
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;빌드실행&quot;&gt;빌드실행&lt;/h2&gt;
+
+&lt;p&gt;설정이 끝나고 터미널에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;fastlane [lane명]&lt;/code&gt; 을 입력하면 빌드가 시작된다.&lt;/p&gt;
+
+&lt;h4 id=&quot;ios-all&quot;&gt;ios all&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane all
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;ios-release&quot;&gt;ios release&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane release
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;ios-adhoc&quot;&gt;ios adhoc&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane adhoc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;ios-enterprise&quot;&gt;ios enterprise&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane enterprise
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;about-fastlane&quot;&gt;About Fastlane&lt;/h2&gt;
+&lt;p&gt;For more information about Fastlane -&amp;gt; https://fastlane.tools/&lt;/p&gt;
+
+&lt;p&gt;Fastlane github -&amp;gt; https://github.com/fastlane/fastlane&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="ios" /><summary type="html">지속적인 통합 Fastlane</summary></entry><entry><title type="html">[git] 자주 쓰는 git명령어</title><link href="http://localhost:4000/git/git-%EC%9E%90%EC%A3%BC-%EC%93%B0%EB%8A%94-git%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="alternate" type="text/html" title="[git] 자주 쓰는 git명령어" /><published>2017-09-08T00:00:00+09:00</published><updated>2017-09-08T00:00:00+09:00</updated><id>http://localhost:4000/git/%5Bgit%5D%20%EC%9E%90%EC%A3%BC%20%EC%93%B0%EB%8A%94%20git%EB%AA%85%EB%A0%B9%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/git/git-%EC%9E%90%EC%A3%BC-%EC%93%B0%EB%8A%94-git%EB%AA%85%EB%A0%B9%EC%96%B4/">&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fa fa-file-text&quot;&gt;&lt;/i&gt; On This Page&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#커밋-되돌리기&quot; id=&quot;markdown-toc-커밋-되돌리기&quot;&gt;커밋 되돌리기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#원격-레포-커밋-되돌리기&quot; id=&quot;markdown-toc-원격-레포-커밋-되돌리기&quot;&gt;원격 레포 커밋 되돌리기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#commit했었던-곳으로-돌아가기&quot; id=&quot;markdown-toc-commit했었던-곳으로-돌아가기&quot;&gt;commit했었던 곳으로 돌아가기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#원격-파일-삭제하기&quot; id=&quot;markdown-toc-원격-파일-삭제하기&quot;&gt;원격 파일 삭제하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;h2 id=&quot;커밋-되돌리기&quot;&gt;커밋 되돌리기&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git reset HEAD^&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;이 명령을 사용하면 커밋 하나를 되돌릴 수 있다. 두개를 되돌리려면&lt;/p&gt;
@@ -33,7 +201,7 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git rm —cached [flileName]&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;git rm 은 로컬과 원격을 모두 삭제하므로 —cached를 꼭 붙여줘야 한다.&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">커밋 되돌리기 $ git reset HEAD^</summary></entry><entry><title type="html">[ios] status bar 다루기</title><link href="http://localhost:4000/ios-status-bar-%EB%8B%A4%EB%A3%A8%EA%B8%B0/" rel="alternate" type="text/html" title="[ios] status bar 다루기" /><published>2017-08-19T00:00:00+09:00</published><updated>2017-08-19T00:00:00+09:00</updated><id>http://localhost:4000/%5Bios%5D%20status%20bar%20%EB%8B%A4%EB%A3%A8%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/ios-status-bar-%EB%8B%A4%EB%A3%A8%EA%B8%B0/">&lt;h2 id=&quot;status-bar&quot;&gt;status bar&lt;/h2&gt;
+&lt;p&gt;git rm 은 로컬과 원격을 모두 삭제하므로 —cached를 꼭 붙여줘야 한다.&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="git" /><summary type="html">On This Page</summary></entry><entry><title type="html">status bar</title><link href="http://localhost:4000/ios/ios-status-bar-%EB%8B%A4%EB%A3%A8%EA%B8%B0/" rel="alternate" type="text/html" title="status bar" /><published>2017-08-19T00:00:00+09:00</published><updated>2017-08-19T00:00:00+09:00</updated><id>http://localhost:4000/ios/%5Bios%5D%20status%20bar%20%EB%8B%A4%EB%A3%A8%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/ios/ios-status-bar-%EB%8B%A4%EB%A3%A8%EA%B8%B0/">&lt;h2 id=&quot;status-bar&quot;&gt;status bar&lt;/h2&gt;
 
 &lt;p&gt;ios에서 상태바를 커스터마이징 가능한 부분은 상태바의 백그라운드 색상변경(아무색이나 가능)과 상태바 안의 텍스트 색상변경(하얀색 or 검정색으로 제한)
 이다.&lt;/p&gt;
@@ -133,4 +301,4 @@ UIApplication.shared.statusBarView?.backgroundColor = .black
 }
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">status bar</summary></entry></feed>
+&lt;/div&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">How to use status bar.</summary></entry></feed>

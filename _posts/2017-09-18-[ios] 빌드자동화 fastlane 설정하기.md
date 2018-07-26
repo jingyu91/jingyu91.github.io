@@ -1,4 +1,8 @@
-# Fastlane으로 빌드 자동화 설정하기
+---
+title: "Fastlane으로 빌드 자동화 설정하기"
+category: ios
+excerpt: "지속적인 통합 Fastlane"
+---
 
 외주 개발을 하게 되면서 서로 다른 애플 개발자 계정으로 enterprise, adhoc빌드, 스토어 업로드를 처리하다보니
 

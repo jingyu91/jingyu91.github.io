@@ -1,3 +1,10 @@
+---
+title: "status bar"
+categories: ios
+excerpt: "How to use status bar."
+---
+
+
 ## status bar
 
 ios에서 상태바를 커스터마이징 가능한 부분은 상태바의 백그라운드 색상변경(아무색이나 가능)과 상태바 안의 텍스트 색상변경(하얀색 or 검정색으로 제한)

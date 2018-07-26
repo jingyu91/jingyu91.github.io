@@ -243,4 +243,12 @@ defaults:
       read_time: true
       comments:  true
       share: true
-      related: true
+      related: false
+
+  # _docs
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: "sidebar-sample"
