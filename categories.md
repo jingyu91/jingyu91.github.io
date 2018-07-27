@@ -7,5 +7,6 @@ title: Categories
 	<ul>
 		<li><a href="./ios/">iOS</a></li>
 		<li><a href="./git/">Git</a></li>
+		<li><a href="./aws/">AWS</a></li>
 	</ul>
 </div>

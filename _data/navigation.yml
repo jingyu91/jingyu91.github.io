@@ -4,8 +4,8 @@ main:
     url: https://jingyu91.github.io
   - title: "About"
     url: https://jingyu91.github.io
-  - title: "Category"
-    url: /category
+  - title: "Categories"
+    url: /categories
 #  - title: "Sample Collections"
 #    url: /collection-archive/
 #  - title: "Sitemap"
