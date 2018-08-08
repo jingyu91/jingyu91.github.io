@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-08T14:03:22+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">xcode Use of undeclared type 에러</title><link href="http://localhost:4000/ios/xcode-Use-of-undeclared-type-%EC%97%90%EB%9F%AC/" rel="alternate" type="text/html" title="xcode Use of undeclared type 에러" /><published>2018-08-07T00:00:00+09:00</published><updated>2018-08-07T00:00:00+09:00</updated><id>http://localhost:4000/ios/xcode%20%22Use%20of%20undeclared%20type%22%20%EC%97%90%EB%9F%AC</id><content type="html" xml:base="http://localhost:4000/ios/xcode-Use-of-undeclared-type-%EC%97%90%EB%9F%AC/">&lt;h2 id=&quot;xcode-use-of-undeclared-type-에러-해결법&quot;&gt;Xcode “Use of undeclared type” 에러 해결법&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-08-08T14:06:19+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">xcode Use of undeclared type 에러</title><link href="http://localhost:4000/ios/xcode-Use-of-undeclared-type-%EC%97%90%EB%9F%AC/" rel="alternate" type="text/html" title="xcode Use of undeclared type 에러" /><published>2018-08-07T00:00:00+09:00</published><updated>2018-08-07T00:00:00+09:00</updated><id>http://localhost:4000/ios/xcode%20%22Use%20of%20undeclared%20type%22%20%EC%97%90%EB%9F%AC</id><content type="html" xml:base="http://localhost:4000/ios/xcode-Use-of-undeclared-type-%EC%97%90%EB%9F%AC/">&lt;h2 id=&quot;xcode-use-of-undeclared-type-에러-해결법&quot;&gt;Xcode “Use of undeclared type” 에러 해결법&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/2018-08-07-post1/1.png?raw=true&amp;quot;&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -204,7 +204,7 @@ https://github.com/HazAT/fastlane-plugin-badge&lt;/p&gt;
 
 &lt;p&gt;ex) 배너 예외처리로 돌아가기&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/post2/image1.png?raw=true&amp;quot;&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2017-09-08-post1/image1.png?raw=true&amp;quot;&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git reset —hard HEAD@{21}&lt;/code&gt;&lt;/p&gt;
 
