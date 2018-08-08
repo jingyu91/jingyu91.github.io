@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c65e35e-daec-4fcb-9185-6d236badff8e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/post2/image1.png" afterPath="$PROJECT_DIR$/images/2017-09-08-post1/image1.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/2017-09-08-post1/image1.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2017-09-08-[git] 자주 쓰는 git명령어.md" afterPath="$PROJECT_DIR$/_posts/2017-09-08-[git] 자주 쓰는 git명령어.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/feed.xml" afterPath="$PROJECT_DIR$/_site/feed.xml" />
     </list>
     <ignored path="jingyu91.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,8 +78,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="349">
-                <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+              <first_editor relative-caret-position="333">
+                <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -485,12 +487,12 @@
       <workItem from="1532580155907" duration="12026000" />
       <workItem from="1532663380102" duration="214000" />
       <workItem from="1532681108015" duration="1621000" />
-      <workItem from="1533702362228" duration="1510000" />
+      <workItem from="1533702362228" duration="1973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32874000" />
+    <option name="totallyTimeSpent" value="33337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -909,10 +911,10 @@
         <state relative-caret-position="4912">
           <caret line="307" column="28" selection-start-line="307" selection-start-column="28" selection-end-line="307" selection-end-column="28" />
           <folding>
-            <marker date="1533704606000" expanded="true" signature="1897:2120" ph="..." />
-            <marker date="1533704606000" expanded="true" signature="1970:2003" ph="{...}" />
-            <marker date="1533704606000" expanded="true" signature="2027:2110" ph="{...}" />
-            <marker date="1533704606000" expanded="true" signature="2432:2442" ph="..." />
+            <marker date="1533705573000" expanded="true" signature="1897:2120" ph="..." />
+            <marker date="1533705573000" expanded="true" signature="1970:2003" ph="{...}" />
+            <marker date="1533705573000" expanded="true" signature="2027:2110" ph="{...}" />
+            <marker date="1533705573000" expanded="true" signature="2432:2442" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1043,8 +1045,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="349">
-            <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <first_editor relative-caret-position="333">
+            <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
             <folding />
           </first_editor>
           <second_editor />
