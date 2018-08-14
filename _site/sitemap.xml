@@ -21,6 +21,10 @@
 <lastmod>2018-08-07T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/os/os-Process-Synchronization/</loc>
+<lastmod>2018-08-13T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/aws/</loc>
 </url>
 <url>
@@ -34,5 +38,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/ios/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/os/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page2/</loc>
 </url>
 </urlset>
