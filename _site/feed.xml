@@ -1,4 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-06T22:31:11+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">DataLink 계층의 기능</title><link href="http://localhost:4000/network/network-DataLink/" rel="alternate" type="text/html" title="DataLink 계층의 기능" /><published>2018-09-06T00:00:00+09:00</published><updated>2018-09-06T00:00:00+09:00</updated><id>http://localhost:4000/network/%5Bnetwork%5D%20DataLink</id><content type="html" xml:base="http://localhost:4000/network/network-DataLink/">&lt;h1 id=&quot;datalink&quot;&gt;DataLink&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-08T18:30:01+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">[network] tcp</title><link href="http://localhost:4000/network-TCP/" rel="alternate" type="text/html" title="[network] tcp" /><published>2018-09-06T00:00:00+09:00</published><updated>2018-09-06T00:00:00+09:00</updated><id>http://localhost:4000/%5Bnetwork%5D%20TCP</id><content type="html" xml:base="http://localhost:4000/network-TCP/">&lt;h1 id=&quot;tcp와-udp&quot;&gt;TCP와 UDP&lt;/h1&gt;
+
+&lt;p&gt;TCP와 UDP는 커널 내부에 구현되어 사용자가 직접 이용하지 못한다. 대신 소켓 인터페이스라는 Transport 계층의 인터페이스를 사용하여 시스템콜 기능으로 호출된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UDP&lt;/strong&gt;는 비연결형 프로토콜이다. TCP의 handshaking 과정이 없으며 일방적으로 데이터를 전달하는 통신 프로토콜이다. TCP와 비교하면 안정성은 떨어지지만 속도가 빠르다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TCP&lt;/strong&gt;는 연결형 서비스를 지원하는 전송계층 프로토콜이다. 전이중 방식의 양방향 통신을 지원하여 두 프로세스가 동시에 데이터를 전송할 수 있다. 연결형 서비스를 지원하기 위해 연결 설정, 데이터 전송, 연결 헤제 3단계를 순차적으로 진행한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;3-way-handshaking&quot;&gt;3 way handshaking&lt;/h3&gt;
+
+&lt;p&gt;연결을 설정할때 이루어진다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;프로세스 A, B가 있다고 가정하면, A는 임의의 번호로 SYN 플래그 비트를 전송하여 연결 설정을 요청한다. (Seq=1000, SYN)&lt;/li&gt;
+  &lt;li&gt;프로세스 B는 A가 보낸 seq번호에 1을 더하여 ACK를 보내고 임의의 seq번호를 보낸다.(Seq=2000 SYN, ACK=1001)&lt;/li&gt;
+  &lt;li&gt;A는 B가 보낸 seq번호에 1을 더하여 ACK를 보내면 연결이 성립된다. (ACK=2001)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/network/3-way-handshake.png&quot; alt=&quot;그림1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;*SYN : Synchronize sequence number&lt;/p&gt;
+
+&lt;p&gt;*ACK : Acknowledgement&lt;/p&gt;
+
+&lt;p&gt;연결이 설정된 이후로는 established 상태로 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;4-way-handshaking&quot;&gt;4 way handshaking&lt;/h3&gt;
+
+&lt;p&gt;연결을 종료할때 이루어진다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A가 할일이 끝나면 FIN을 보내고 A는 FIN_WAIT_1상태로 바뀐다.&lt;/li&gt;
+  &lt;li&gt;B는 A가 끝났다는것에 대한 응답 ACK를 보내고 B의 해당 포트를 CLOSE_WAIT로 바꾼다.&lt;/li&gt;
+  &lt;li&gt;B가 마무리가 되면 끝났다는 FIN을 A에게 보낸다.&lt;/li&gt;
+  &lt;li&gt;A는 B가 끝나다는 것에 대한 응답 ACK를 보낸다. B는 소켓을  CLOSE한다.&lt;/li&gt;
+  &lt;li&gt;A는 아직 B로부터 데이터가 받을지 모르기 때문에 일정 시간의 잉여시간을 남겨두는 과정을 거친다. TIME_WAIT&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/network/4way_handshake.png&quot; alt=&quot;4way_handshake&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;연결이 종료될때에는 예기치 못한 상황이 발생하여 FIN_WAIT상태나 CLOSE_WAIT상태로 남아있을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;- CLOSE_WAIT 상태 : 어플리케이션에서 close()를 적절하게 처리해주지 못하면, TCP 포트는 CLOSE_WAIT 상태로 계속 기다리게 된다. 이렇게 CLOSE_WAIT 상태가 statement에 많아지게 되면, Hang 이 걸려 더이상 연결을 하지 못하는 경우가 생기기도 한다. 따라서 어플리케이션 개발시 여러 상황에 따라 close() 처리를 잘 해줘야 한다.&lt;/p&gt;
+
+&lt;p&gt;- FIN_WAIT_1 상태 : FIN_WAIT_1 상태라는 것은 상대방측에 커넥션 종료 요청을 했는데, ACK를 받지 못한 상태로 기다리고 있는 것이다. 이것은 아마 서버를 찾을 수 없는 것으로, 네트워크 및 방화벽의 문제일 수 있다.&lt;/p&gt;
+
+&lt;p&gt;(FIN_WAIT_1 의 상태는 일정 시간이 지나 Time Out이 되면 자동으로 닫는다.)&lt;/p&gt;
+
+&lt;p&gt;- FIN_WAIT_2 상태 : FIN_WAIT_2 상태는 클라이언트가 서버에 종료를 요청한 후 서버에서 요청을 접수했다고 ACK를 받았지만, 서버에서 종료를 완료했다는 FIN 을 받지 못하고 기다리고 있는 상태이다. 이상태는 양방의 두번의 통신이 이루어졌기 때문에 네트워크의 문제는 아닌 것으로 판단되며,(FIN 을 보내는 순간에 순단이 있어 못받은 것일 수도 있다.) 서버측에서 CLOSE를 처리하지 못하는 경우일 수도 있다. FIN_WAIT_2 역시 일정시간 후 Time Out이 되면 스스로 Closed 하게 된다.&lt;/p&gt;
+
+&lt;p&gt;- 어떠한 이유에서 FIN_WAIT_1과 FIN_WAIT_2 상태인 연결이 많이 남아있다면, 문제가 발생할 수 있다. 물론 일정 시간이 지나 Time Out이 되면 연결이 자동으로 종료되긴 하지만, 이 Time Out이 길어서 많은 수의 소켓이 늘어만 난다면, 메모리 부족으로 더 이상 소켓을 오픈하지 못하는 경우가 발생한다.&lt;/p&gt;
+
+&lt;p&gt;(이 경우는 네트워크나 방화벽 또는 어플리케이션에서 close() 처리 등에 대한 문제등으로 발생할 수 있으며, 원인을 찾기가 쉽지 않다.)&lt;/p&gt;
+
+&lt;p&gt;- 이러한 문제 해결을 위해서 FIN_WAIT_1과 FIN_WAIT_2 의 Time Out 시간을 적절히 조절할 필요가 있다.&lt;/p&gt;
+
+&lt;p&gt;출처:&lt;/p&gt;
+
+&lt;p&gt;http://hyeonstorage.tistory.com/287&lt;/p&gt;
+
+&lt;h2 id=&quot;tcp의-혼잡제어&quot;&gt;TCP의 혼잡제어&lt;/h2&gt;
+
+&lt;p&gt;흐름제어와 혼잡제어로 인해 호스트간 신뢰성 있는 데이터 전달이 가능하다. 흐름제어는 송신자가 수신자의 버퍼에 맞게 전송속도를 조절하는 것이고, 혼잡제어는 송신자가 네트워크의 상황에 맞춰 흐름을 조절하는 것이다. 빠른 LAN에서 느린 WAN으로 전송하거나 다수의 전송이 하나의 라우터에 몰릴 경우 혼잡이 발생하는데 이러한 문제를 해결하기 위해 TCP에서 혼잡제어 메커니즘을 제공한다. (윈도우 사이즈를 조절하여 혼잡을 제어함)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;slow-start&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;처음 연결이 될때 수신자의 버퍼에 맞춰 보내게 되면 중간 라우터의 버퍼에 부하가 올 수 있다. 때문에 새로운 패킷을 망에 전송하는 비율과 수신자의 ACK를 관찰하여 윈도우 사이즈를 지수함수적으로 증가시키는 방법이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;congestion-avoidance(혼잡회피)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;slow-start&lt;/em&gt;로 지수함수적으로 윈도우 사이즈를 늘리다가 &lt;em&gt;threshold에&lt;/em&gt; 도달하면 선형적으로 늘리는 방법이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;fast-retransmission (빠른 재전송)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;윈도우 사이즈만큼 패킷을 보내고 받게 되는데 수신자측에서는 마지막으로 받은 패킷의 다음번 순번을 ACK의 Sequance에 담아서 보내게 된다. 만약 중간에 순번이 틀리게 된다면 같은 ACK가 계속 발생하게 되고 송신자 측에서 문제를 감지하고 해당 패킷을 재전송하게 된다. 이러한 문제는 혼잡상황에서 발생하기 때문에 window size를 감소시킨다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;fast-recovery (빠른 회복)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;혼잡상태가 발생했을때 window size를 1로 줄이지 않고 반으로 줄이고 선형 증가시키는 방법이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/network/congestionControl.png&quot; alt=&quot;congestionControl&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;중복 ACK가 발생하면 &lt;em&gt;fast-retransmission&lt;/em&gt;을 수행하고 timeout이 발생하면 &lt;em&gt;slow-start&lt;/em&gt;를 수행한다.&lt;/p&gt;
+
+&lt;p&gt;출처&lt;/p&gt;
+
+&lt;p&gt;1) https://www.hackmageddon.com/2011/04/17/tcp-split-handshake-attack-explained/&lt;/p&gt;
+
+&lt;p&gt;2) http://needjarvis.tistory.com/157&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html"></summary></entry><entry><title type="html">DataLink 계층의 기능</title><link href="http://localhost:4000/network/network-DataLink/" rel="alternate" type="text/html" title="DataLink 계층의 기능" /><published>2018-09-06T00:00:00+09:00</published><updated>2018-09-06T00:00:00+09:00</updated><id>http://localhost:4000/network/%5Bnetwork%5D%20DataLink</id><content type="html" xml:base="http://localhost:4000/network/network-DataLink/">&lt;h1 id=&quot;datalink&quot;&gt;DataLink&lt;/h1&gt;
 
 &lt;p&gt;내 컴퓨터에서 다른 컴퓨터로 요청을 할때 링크로 연결되 무수한 라우터(컴퓨터)를 거쳐 목적지에 도착한다. 컴퓨터와 컴퓨터 사이, 즉 physical - physical 사이 통신은 DataLink를 거치게 된다.&lt;/p&gt;
 
@@ -1178,104 +1274,4 @@ https://github.com/HazAT/fastlane-plugin-badge&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git rm —cached [flileName]&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;git rm 은 로컬과 원격을 모두 삭제하므로 —cached를 꼭 붙여줘야 한다.&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="git" /><summary type="html">On This Page</summary></entry><entry><title type="html">status bar</title><link href="http://localhost:4000/ios/ios-status-bar-%EB%8B%A4%EB%A3%A8%EA%B8%B0/" rel="alternate" type="text/html" title="status bar" /><published>2017-08-19T00:00:00+09:00</published><updated>2017-08-19T00:00:00+09:00</updated><id>http://localhost:4000/ios/%5Bios%5D%20status%20bar%20%EB%8B%A4%EB%A3%A8%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/ios/ios-status-bar-%EB%8B%A4%EB%A3%A8%EA%B8%B0/">&lt;h2 id=&quot;status-bar&quot;&gt;status bar&lt;/h2&gt;
-
-&lt;p&gt;ios에서 상태바를 커스터마이징 가능한 부분은 상태바의 백그라운드 색상변경(아무색이나 가능)과 상태바 안의 텍스트 색상변경(하얀색 or 검정색으로 제한)
-이다.&lt;/p&gt;
-
-&lt;p&gt;글자색도 변경해보고 싶어지만 애플가이드라인에서는 밝은 배경일때 검은색 텍스트 / 어두운 배경일때 하얀 텍스트를 쓰라고 권장하고 있는 부분이다.
-(알록달록한 색상은 불가능함)&lt;/p&gt;
-
-&lt;h3 id=&quot;상태바-백그라운드-색상-변경하기&quot;&gt;상태바 백그라운드 색상 변경하기&lt;/h3&gt;
-
-&lt;p&gt;상태바 백그라운드 색상은 뷰를 만들어서 addSubView 하는 방법과 “statusBar” key로 상태바를 get해서 바꾸는 방법이 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let statusBar = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20))
-        statusBar.backgroundColor = .green // 원하는 색상 지정
-        window?.rootViewController?.view.addSubview(statusBar)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;or&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension UIApplication {
-    var statusBarView: UIView? {
-        return value(forKey: &quot;statusBar&quot;) as? UIView
-    }
-}
-
-// insert code in AppDelegate
-UIApplication.shared.statusBarView?.backgroundColor = .black
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;상태바 백그라운드 색상변경은 비교적 간단하니 이정도로 넘어가고 텍스트 변경을 해보자.&lt;/p&gt;
-
-&lt;p&gt;텍스트 변경은 잘못 접근하면 잘 먹히지가 않아서 정리를 제대로 해둬야겠다고 생각했다.&lt;/p&gt;
-
-&lt;h3 id=&quot;상태바-텍스트-변경하기&quot;&gt;상태바 텍스트 변경하기&lt;/h3&gt;
-
-&lt;p&gt;상태바를 원하는대로 바꾸기 위해서는 info.plist의 속성설정에 따라 두가지 종류로 나눌 수 있다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/post1/plist.png?raw=true&amp;quot;&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;바로 이 속성을 NO로 지정하느냐 YES로 지정하느냐에 따라 설정하는 방법이 다르다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;case1. View controller-based status bar appearance = NO&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;AppDelegate - didFinishLaunchingWithOptions메서드 안에 다음 소스를 추가한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UIApplication.shared.statusBarStyle = .lightContent // white color&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;or&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UIApplication.shared.statusBarStyle = .default // black color&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;이렇게 설정을 해두면 모든 뷰컨트롤러에서 같게 세팅이 된다.&lt;/p&gt;
-
-&lt;p&gt;info.plist에서 속성을 NO로 지정하지 않았다면 아무리 설정해봐도 먹히지 않으니
-바뀌지 않는다면 plist를 다시 확인해보자.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;case2. View controller-based status bar appearance = YES&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이 방식은 모든 뷰컨트롤러마다 스타일을 지정해 주어야 한다.&lt;/p&gt;
-
-&lt;p&gt;스타일을 지정하는 방법은 이전과 다르게 UIViewController의&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var preferredStatusBarStyle: UIStatusBarStyle
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;속성을 오버라이드 해서 바꾸는 방법으로 접근해야한다.&lt;/p&gt;
-
-&lt;p&gt;모든 ViewController가 상속받는 base ViewController가 있다면 여기에 설정해 놓는 것이 수월하다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    var statusBarStyle: UIStatusBarStyle = .lightContent { didSet { setNeedsStatusBarAppearanceUpdate() } }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return statusBarStyle
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Navigation 뷰컨을 쓴다면 확장해서 설정한다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extension UINavigationController {
-    
-    override open var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">How to use status bar.</summary></entry></feed>
+&lt;p&gt;git rm 은 로컬과 원격을 모두 삭제하므로 —cached를 꼭 붙여줘야 한다.&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="git" /><summary type="html">On This Page</summary></entry></feed>
