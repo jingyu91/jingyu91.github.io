@@ -131,21 +131,17 @@ TCP와 UDP는 커널 내부에 구현되어 사용자가 직접 이용하지 못
 
 중복 ACK가 발생하면 *fast-retransmission*을 수행하고 timeout이 발생하면 *slow-start*를 수행한다.
 
+​    
 
+​    
 
+​    
 
+> 출처
 
- 
+[https://www.hackmageddon.com/2011/04/17/tcp-split-handshake-attack-explained/](https://www.hackmageddon.com/2011/04/17/tcp-split-handshake-attack-explained/)
 
- 
+[http://hyeonstorage.tistory.com/287](http://hyeonstorage.tistory.com/287)
 
-
-
-출처
-
-1) https://www.hackmageddon.com/2011/04/17/tcp-split-handshake-attack-explained/
-
-2) http://hyeonstorage.tistory.com/287
-
-2) http://needjarvis.tistory.com/157
+[http://needjarvis.tistory.com/157](http://needjarvis.tistory.com/157)
 

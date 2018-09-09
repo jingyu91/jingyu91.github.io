@@ -1,6 +1,182 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-08T18:30:01+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">[network] tcp</title><link href="http://localhost:4000/network-TCP/" rel="alternate" type="text/html" title="[network] tcp" /><published>2018-09-06T00:00:00+09:00</published><updated>2018-09-06T00:00:00+09:00</updated><id>http://localhost:4000/%5Bnetwork%5D%20TCP</id><content type="html" xml:base="http://localhost:4000/network-TCP/">&lt;h1 id=&quot;tcp와-udp&quot;&gt;TCP와 UDP&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.4.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-09T18:49:11+09:00</updated><id>http://localhost:4000/</id><title type="html">Jingyu playground</title><subtitle></subtitle><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><entry><title type="html">OSI 7계층</title><link href="http://localhost:4000/network/network-osi7%EA%B3%84%EC%B8%B5/" rel="alternate" type="text/html" title="OSI 7계층" /><published>2018-09-09T00:00:00+09:00</published><updated>2018-09-09T00:00:00+09:00</updated><id>http://localhost:4000/network/%5Bnetwork%5D%20osi7%EA%B3%84%EC%B8%B5</id><content type="html" xml:base="http://localhost:4000/network/network-osi7%EA%B3%84%EC%B8%B5/">&lt;p&gt;OSI7계층의 중요한 목적은 표준과 학습도구이다. 표준화는 다양한 장비 사이에서 같은 규칙을 사용하여 이질성을 감소시킨다.&lt;/p&gt;
 
-&lt;p&gt;TCP와 UDP는 커널 내부에 구현되어 사용자가 직접 이용하지 못한다. 대신 소켓 인터페이스라는 Transport 계층의 인터페이스를 사용하여 시스템콜 기능으로 호출된다.&lt;/p&gt;
+&lt;p&gt;뿐만 아니라 각각의 층에 대한 프로토콜이 잘 정립되어 있어 해당하는 분야에만 집중 할 수 있다. 예를들어 라우터를 제작할 경우 3계층에 대한 프로토콜만 맞춰어 제작하면 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Physical - DataLink - Network - Transport - Session - Presentation - Application&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;각 계층의 쓰임과 쓰이는 프로토콜에 대해 정리해보았다.&lt;/p&gt;
+
+&lt;h2 id=&quot;application&quot;&gt;Application&lt;/h2&gt;
+
+&lt;p&gt;사용자 프로그램. 웹이나 FTP같은 유저 인터페이스.&lt;/p&gt;
+
+&lt;p&gt;프로토콜: HTTP, DNS, FTP&lt;/p&gt;
+
+&lt;h2 id=&quot;presentation&quot;&gt;Presentation&lt;/h2&gt;
+
+&lt;p&gt;데이터의 표현. 암호화/복호화. 운영체제의 한 부분으로 JPEG같은 확장자처럼 전송데이터를 이해할수 있게 번역하는 역할을 수행&lt;/p&gt;
+
+&lt;p&gt;프로토콜: JPEG, PNG&lt;/p&gt;
+
+&lt;h2 id=&quot;session&quot;&gt;Session&lt;/h2&gt;
+
+&lt;p&gt;2개의 기기 사이에 세션이 이루어짐. 포트(Port)연결.&lt;/p&gt;
+
+&lt;p&gt;프로토콜 :SSH, TLS&lt;/p&gt;
+
+&lt;h2 id=&quot;transport&quot;&gt;Transport&lt;/h2&gt;
+
+&lt;p&gt;데이터 용량 및 속도 등을 처리. 발신지대 목적지(종단 대 종단)간 제어와 에러를 관리. 패킷들의 전송이 유효한지 확인. 신뢰성 통신을 보장하기도 함&lt;/p&gt;
+
+&lt;p&gt;프로토콜 : TCP, UDP&lt;/p&gt;
+
+&lt;h2 id=&quot;network&quot;&gt;Network&lt;/h2&gt;
+
+&lt;p&gt;패킷을 발신지부터 목적지까지 전달.&lt;/p&gt;
+
+&lt;p&gt;프로토콜 : IP, ARP&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;*IP :패킷의 분할/병합기능을 한다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;*ARP : 패킷에 있는 ip주소를 물리적인 MAC주소로 변환시켜주는 프로토콜이다. DataLink계층으로 전달될때 MAC주소를 프레임으로 캡슐화해서  보낸다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;datalink&quot;&gt;DataLink&lt;/h2&gt;
+
+&lt;p&gt;두개의 직접 연결된 노드 간 frame 전송. 오류 수정 및 flow control.&lt;/p&gt;
+
+&lt;p&gt;프로토콜: MAC, PPP&lt;/p&gt;
+
+&lt;h2 id=&quot;phsical&quot;&gt;Phsical&lt;/h2&gt;
+
+&lt;p&gt;두 노드를 물리적으로 연결시켜주는 방식을 다룸.&lt;/p&gt;
+
+&lt;p&gt;프로토콜 : ethernet&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="network" /><summary type="html">OSI7계층의 중요한 목적은 표준과 학습도구이다. 표준화는 다양한 장비 사이에서 같은 규칙을 사용하여 이질성을 감소시킨다.</summary></entry><entry><title type="html">HTTP와 HTTPS 프로토콜과 인증서</title><link href="http://localhost:4000/network/network-HTTP%EC%99%80-HTTPS/" rel="alternate" type="text/html" title="HTTP와 HTTPS 프로토콜과 인증서" /><published>2018-09-09T00:00:00+09:00</published><updated>2018-09-09T00:00:00+09:00</updated><id>http://localhost:4000/network/%5Bnetwork%5D%20HTTP%EC%99%80%20HTTPS</id><content type="html" xml:base="http://localhost:4000/network/network-HTTP%EC%99%80-HTTPS/">&lt;p&gt;​&lt;/p&gt;
+
+&lt;h1 id=&quot;protocol&quot;&gt;Protocol&lt;/h1&gt;
+
+&lt;p&gt;프로토콜(Protocol)은 컴퓨터나 네트워크 장비가 서로 통신하기 위해 미리 정해 놓은 약속을 뜻한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;http&quot;&gt;HTTP&lt;/h2&gt;
+
+&lt;p&gt;HyperText Transfer Protocol의 약자로 WWW(World Wide Web)에서 hypertext 문서를 교환하기 위하여 사용되는 통신규약이다.&lt;/p&gt;
+
+&lt;p&gt;대표적인 규칙으로는 Status code와 Request Method가 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Status code:&lt;/strong&gt;  http 통신중 요청의 상태 정보를 제공한다. 공식 적인 상태코드 목록은 &lt;a href=&quot;http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml&quot;&gt;IANA&lt;/a&gt;에서 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;상태코드의 첫 숫자는 응답의 종류를 나타낸다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;1xx - Informational - 정보교환&lt;/li&gt;
+  &lt;li&gt;2xx - Success - 성공
+200 - OK	- 요청이 성공적으로 전송됨&lt;/li&gt;
+  &lt;li&gt;3xx - Redirection - 방향 지정
+301 - Moved Permanently - 요청 페이지의 영구적인 위치 변화
+302 - Found	- 요청 페이지이 일시적인 위치 변화&lt;/li&gt;
+  &lt;li&gt;4xx - Client Error - 클라이언트 오류
+404 - Not Found - 요청받은 자원을 서버에서 찾을 수 없을때 나타나는 상태 
+405 - Method Not Allowed - 서버에서 사용자가 요청한 주소의 메소드를 지원하지 않을때 나타남&lt;/li&gt;
+  &lt;li&gt;5xx - server Error - 서버 오류&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Request methods:&lt;/strong&gt; 요청이 수행될 작업의 방법을 나타낸다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;OPTIONS: 요청한 URL에 어떠한 메소드 요청이 가능한지 묻는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;GET: 다른 작업없이 데이터의 검색에 이용.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HEAD: 데이터의 검색에 이용하나 GET과는 다르게 응답 HEADER만 받는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;POST: URL에 새로운 데이터를 보낼때 사용.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;PUT: URL에 저장될 정보를 보낸다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DELETE: URL의 리소스를 삭제한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TRACE: 보낸 메세지를 다시 돌려받는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CONNECT: 프록시에서 사용되는 예약 메소드.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HTTP의 한계&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;암호화 안된 방식으로 데이터를 주고 받음 : 데이터를 중간에 가로챌 수 있음.&lt;/li&gt;
+  &lt;li&gt;통신하는 상대방의 신원을 확인하지 않음 : 상대방이 누군지 확인하지 않고 요청/응답을 보냄. 중간에 상대방인척하고 데이터를 가로챌 수 있음.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;h2 id=&quot;https&quot;&gt;HTTPS&lt;/h2&gt;
+
+&lt;p&gt;HTTP를 SSL(Secure Socket Layer)로 한층 더 감싸서 보안을 강화한 것.  =&amp;gt; HTTPS는 SSL프로토콜 위에서  돌아가는 프로토콜이다.&lt;/p&gt;
+
+&lt;p&gt;기존 &lt;strong&gt;HTTP의 한계&lt;/strong&gt;를 극복한다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;데이터를 암호화하고&lt;/li&gt;
+  &lt;li&gt;통신하는 상대방의 신원을 확인함.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;SSL인증은 신뢰할 수 있는 제 3자(CA)의 인증서를 기반으로 돌아간다.&lt;/p&gt;
+
+&lt;p&gt;SSL은 &lt;strong&gt;보안&lt;/strong&gt;과 &lt;strong&gt;성능&lt;/strong&gt;을 고려하여 &lt;strong&gt;대칭키&lt;/strong&gt;와 &lt;strong&gt;공개키&lt;/strong&gt; 라는 두 가지 인증 방식을 가지고 있다.&lt;/p&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;h3 id=&quot;대칭키&quot;&gt;&lt;strong&gt;대칭키&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/network/symmetricKey.png&quot; alt=&quot;symmetricKey&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;대칭키(symmetric key) 방식은 동일한 키로 암호화와 복호화를 같이 할 수 있는 방식의 암호화 기법을 의미한다. 즉, A를 k라는 key로 암호화하여 B로 만들었을때, B를 k로 복호화 할 수 있다는 뜻이다.&lt;/p&gt;
+
+&lt;p&gt;대칭키 방식은 단점이 있다. 암호를 주고 받는 사람들 사이에 대칭키를 전달하는 것이 어렵다는 점이다. 대칭키가 유출되면 키를 획득한 공격자는 암호의 내용을 복호화 할 수 있기 때문에 암호가 무용지물이 되기 때문이다. 이런 배경에서 나온 암호화 방식이 공개키방식이다.&lt;/p&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;h3 id=&quot;공개키&quot;&gt;&lt;strong&gt;공개키&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/network/publicKey.png&quot; alt=&quot;publicKey&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;공개키(public key) 방식은 한 키로 암호화하면 다른 쌍의 키로 복호화 할 수 있는 private키와 public키의 쌍으로 구성되는 방식이다.&lt;/p&gt;
+
+&lt;p&gt;private키는 절대로 공개해서는 안되는 키로 자신만 가지고 있고, public키는 타인에게 공개한다. public키가 공개되어도 암호화된 내용은 private키로만 복호화 가능하기 때문에 안전하다. 사실 공개키 방식에서는 데이터를 보호하는 목적보다 데이터의 신원을 보장하는 목적이 더 크다. public키로 암호화된 데이터는 보호되어 private키를 가진 유일한 대상만 복호화 할 수 있지만, private키로 암호화된 데이터는 누구나 열어볼 수 있기 때문이다. 웹 사이트에서 비밀번호 찾기를 하면 임시 비밀번호를 주고 비밀번호를 변경하라는 문구가 뜨는 것은 단방향 암호화로 원래 비밀번호를 찾지 못하는 이유일 수 도 있겠지만 타인이 읽을 수도 있기 때문일 것이다. 하지만 암호화된 데이터를 변조하는 것은 private키가 유출되지 않는 이상 불가능하기 때문에 데이터의 신원은 확실히 보장받을 수 있다. 데이터를 제공한 사람의 신원을 보장해주는 것을 &lt;strong&gt;전자서명&lt;/strong&gt;이라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;공개키 방식은 2048bit를 사용하여 128bit를 사용하는 대칭키 방식보다 performance차이가 크게 발생한다. 때문에 &lt;strong&gt;SSL에서는 공개키 방식과 대칭키 방식을 조합하여 사용한다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;클라이언트와 서버는 처음 handshake과정에서 클라이언트의 브라우저에 있는 CA리스트와 서버 인증서의 CA가 매칭되는지 검사하고, 랜덤데이터를 사용하여 session키를 생성한다. 이 과정은 공개키 방식으로 암호화되어 진행되고 그 이후는 session키를 대칭키로 사용하여 실제 데이터를 주고 받게 된다.&lt;/p&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;출처&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://sejoong.github.io/dev/2015/02/15/dev/&quot;&gt;http://sejoong.github.io/dev/2015/02/15/dev/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://opentutorials.org/course/228/4894&quot;&gt;https://opentutorials.org/course/228/4894&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.bsidesoft.com/?p=3340&quot;&gt;https://www.bsidesoft.com/?p=3340&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hanjungv.github.io/2017-11-07-1_CS_SSL/&quot;&gt;https://hanjungv.github.io/2017-11-07-1_CS_SSL/&lt;/a&gt;&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="network" /><summary type="html">​</summary></entry><entry><title type="html">TCP와 UDP</title><link href="http://localhost:4000/network/network-TCP%EC%99%80-UDP/" rel="alternate" type="text/html" title="TCP와 UDP" /><published>2018-09-06T00:00:00+09:00</published><updated>2018-09-06T00:00:00+09:00</updated><id>http://localhost:4000/network/%5Bnetwork%5D%20TCP%EC%99%80%20UDP</id><content type="html" xml:base="http://localhost:4000/network/network-TCP%EC%99%80-UDP/">&lt;p&gt;TCP와 UDP는 커널 내부에 구현되어 사용자가 직접 이용하지 못한다. 대신 소켓 인터페이스라는 Transport 계층의 인터페이스를 사용하여 시스템콜 기능으로 호출된다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;UDP&lt;/strong&gt;는 비연결형 프로토콜이다. TCP의 handshaking 과정이 없으며 일방적으로 데이터를 전달하는 통신 프로토콜이다. TCP와 비교하면 안정성은 떨어지지만 속도가 빠르다.&lt;/p&gt;
 
@@ -33,30 +209,32 @@
   &lt;li&gt;B는 A가 끝났다는것에 대한 응답 ACK를 보내고 B의 해당 포트를 CLOSE_WAIT로 바꾼다.&lt;/li&gt;
   &lt;li&gt;B가 마무리가 되면 끝났다는 FIN을 A에게 보낸다.&lt;/li&gt;
   &lt;li&gt;A는 B가 끝나다는 것에 대한 응답 ACK를 보낸다. B는 소켓을  CLOSE한다.&lt;/li&gt;
-  &lt;li&gt;A는 아직 B로부터 데이터가 받을지 모르기 때문에 일정 시간의 잉여시간을 남겨두는 과정을 거친다. TIME_WAIT&lt;/li&gt;
+  &lt;li&gt;A는 아직 B로부터 데이터가 받을지 모르기 때문에 일정 시간의 잉여시간을 남겨두는 과정을 거친다. (TIME_WAIT)&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/network/4way_handshake.png&quot; alt=&quot;4way_handshake&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;연결이 종료될때에는 예기치 못한 상황이 발생하여 FIN_WAIT상태나 CLOSE_WAIT상태로 남아있을 수 있다.&lt;/p&gt;
 
-&lt;p&gt;- CLOSE_WAIT 상태 : 어플리케이션에서 close()를 적절하게 처리해주지 못하면, TCP 포트는 CLOSE_WAIT 상태로 계속 기다리게 된다. 이렇게 CLOSE_WAIT 상태가 statement에 많아지게 되면, Hang 이 걸려 더이상 연결을 하지 못하는 경우가 생기기도 한다. 따라서 어플리케이션 개발시 여러 상황에 따라 close() 처리를 잘 해줘야 한다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;CLOSE_WAIT&lt;/strong&gt; 상태 : 어플리케이션에서 close()를 적절하게 처리해주지 못하면, TCP 포트는 CLOSE_WAIT 상태로 계속 기다리게 된다. 이렇게 CLOSE_WAIT 상태가 statement에 많아지게 되면, Hang 이 걸려 더이상 연결을 하지 못하는 경우가 생기기도 한다. 따라서 어플리케이션 개발시 여러 상황에 따라 close() 처리를 잘 해줘야 한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;FIN_WAIT_1&lt;/strong&gt; 상태 : FIN_WAIT_1 상태라는 것은 상대방측에 커넥션 종료 요청을 했는데, ACK를 받지 못한 상태로 기다리고 있는 것이다. 이것은 아마 서버를 찾을 수 없는 것으로, 네트워크 및 방화벽의 문제일 수 있다.&lt;/p&gt;
 
-&lt;p&gt;- FIN_WAIT_1 상태 : FIN_WAIT_1 상태라는 것은 상대방측에 커넥션 종료 요청을 했는데, ACK를 받지 못한 상태로 기다리고 있는 것이다. 이것은 아마 서버를 찾을 수 없는 것으로, 네트워크 및 방화벽의 문제일 수 있다.&lt;/p&gt;
+    &lt;p&gt;(FIN_WAIT_1 의 상태는 일정 시간이 지나 Time Out이 되면 자동으로 닫는다.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;FIN_WAIT_2&lt;/strong&gt; 상태 : FIN_WAIT_2 상태는 클라이언트가 서버에 종료를 요청한 후 서버에서 요청을 접수했다고 ACK를 받았지만, 서버에서 종료를 완료했다는 FIN 을 받지 못하고 기다리고 있는 상태이다. 이상태는 양방의 두번의 통신이 이루어졌기 때문에 네트워크의 문제는 아닌 것으로 판단되며,(FIN 을 보내는 순간에 순단이 있어 못받은 것일 수도 있다.) 서버측에서 CLOSE를 처리하지 못하는 경우일 수도 있다. FIN_WAIT_2 역시 일정시간 후 Time Out이 되면 스스로 Closed 하게 된다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;(FIN_WAIT_1 의 상태는 일정 시간이 지나 Time Out이 되면 자동으로 닫는다.)&lt;/p&gt;
-
-&lt;p&gt;- FIN_WAIT_2 상태 : FIN_WAIT_2 상태는 클라이언트가 서버에 종료를 요청한 후 서버에서 요청을 접수했다고 ACK를 받았지만, 서버에서 종료를 완료했다는 FIN 을 받지 못하고 기다리고 있는 상태이다. 이상태는 양방의 두번의 통신이 이루어졌기 때문에 네트워크의 문제는 아닌 것으로 판단되며,(FIN 을 보내는 순간에 순단이 있어 못받은 것일 수도 있다.) 서버측에서 CLOSE를 처리하지 못하는 경우일 수도 있다. FIN_WAIT_2 역시 일정시간 후 Time Out이 되면 스스로 Closed 하게 된다.&lt;/p&gt;
-
-&lt;p&gt;- 어떠한 이유에서 FIN_WAIT_1과 FIN_WAIT_2 상태인 연결이 많이 남아있다면, 문제가 발생할 수 있다. 물론 일정 시간이 지나 Time Out이 되면 연결이 자동으로 종료되긴 하지만, 이 Time Out이 길어서 많은 수의 소켓이 늘어만 난다면, 메모리 부족으로 더 이상 소켓을 오픈하지 못하는 경우가 발생한다.&lt;/p&gt;
+&lt;p&gt;어떠한 이유에서 FIN_WAIT_1과 FIN_WAIT_2 상태인 연결이 많이 남아있다면, 문제가 발생할 수 있다. 물론 일정 시간이 지나 Time Out이 되면 연결이 자동으로 종료되긴 하지만, 이 Time Out이 길어서 많은 수의 소켓이 늘어만 난다면, 메모리 부족으로 더 이상 소켓을 오픈하지 못하는 경우가 발생한다.&lt;/p&gt;
 
 &lt;p&gt;(이 경우는 네트워크나 방화벽 또는 어플리케이션에서 close() 처리 등에 대한 문제등으로 발생할 수 있으며, 원인을 찾기가 쉽지 않다.)&lt;/p&gt;
 
-&lt;p&gt;- 이러한 문제 해결을 위해서 FIN_WAIT_1과 FIN_WAIT_2 의 Time Out 시간을 적절히 조절할 필요가 있다.&lt;/p&gt;
-
-&lt;p&gt;출처:&lt;/p&gt;
-
-&lt;p&gt;http://hyeonstorage.tistory.com/287&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;이러한 문제 해결을 위해서 FIN_WAIT_1과 FIN_WAIT_2 의 Time Out 시간을 적절히 조절할 필요가 있다.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;tcp의-혼잡제어&quot;&gt;TCP의 혼잡제어&lt;/h2&gt;
 
@@ -90,11 +268,21 @@
 
 &lt;p&gt;중복 ACK가 발생하면 &lt;em&gt;fast-retransmission&lt;/em&gt;을 수행하고 timeout이 발생하면 &lt;em&gt;slow-start&lt;/em&gt;를 수행한다.&lt;/p&gt;
 
-&lt;p&gt;출처&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
 
-&lt;p&gt;1) https://www.hackmageddon.com/2011/04/17/tcp-split-handshake-attack-explained/&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
 
-&lt;p&gt;2) http://needjarvis.tistory.com/157&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html"></summary></entry><entry><title type="html">DataLink 계층의 기능</title><link href="http://localhost:4000/network/network-DataLink/" rel="alternate" type="text/html" title="DataLink 계층의 기능" /><published>2018-09-06T00:00:00+09:00</published><updated>2018-09-06T00:00:00+09:00</updated><id>http://localhost:4000/network/%5Bnetwork%5D%20DataLink</id><content type="html" xml:base="http://localhost:4000/network/network-DataLink/">&lt;h1 id=&quot;datalink&quot;&gt;DataLink&lt;/h1&gt;
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;출처&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.hackmageddon.com/2011/04/17/tcp-split-handshake-attack-explained/&quot;&gt;https://www.hackmageddon.com/2011/04/17/tcp-split-handshake-attack-explained/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://hyeonstorage.tistory.com/287&quot;&gt;http://hyeonstorage.tistory.com/287&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://needjarvis.tistory.com/157&quot;&gt;http://needjarvis.tistory.com/157&lt;/a&gt;&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="network" /><summary type="html">TCP와 UDP는 커널 내부에 구현되어 사용자가 직접 이용하지 못한다. 대신 소켓 인터페이스라는 Transport 계층의 인터페이스를 사용하여 시스템콜 기능으로 호출된다.</summary></entry><entry><title type="html">DataLink 계층의 기능</title><link href="http://localhost:4000/network/network-DataLink/" rel="alternate" type="text/html" title="DataLink 계층의 기능" /><published>2018-09-06T00:00:00+09:00</published><updated>2018-09-06T00:00:00+09:00</updated><id>http://localhost:4000/network/%5Bnetwork%5D%20DataLink</id><content type="html" xml:base="http://localhost:4000/network/network-DataLink/">&lt;h1 id=&quot;datalink&quot;&gt;DataLink&lt;/h1&gt;
 
 &lt;p&gt;내 컴퓨터에서 다른 컴퓨터로 요청을 할때 링크로 연결되 무수한 라우터(컴퓨터)를 거쳐 목적지에 도착한다. 컴퓨터와 컴퓨터 사이, 즉 physical - physical 사이 통신은 DataLink를 거치게 된다.&lt;/p&gt;
 
@@ -1071,207 +1259,4 @@ wakeup(P);
 
 &lt;p&gt;실행하는데 문제가 없었기 때문에 원인을 찾기 힘들었다…&lt;/p&gt;
 
-&lt;p&gt;타겟에 추가가 되지 않았던 이유는 다른 프로젝트에 있는 소스파일을 가져오면서 제대로 설정되지 않았던 것 같다.&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">Use of undeclared type</summary></entry><entry><title type="html">AWS Lamda 사용기</title><link href="http://localhost:4000/aws/lamda%EC%82%AC%EC%9A%A9%EA%B8%B0/" rel="alternate" type="text/html" title="AWS Lamda 사용기" /><published>2018-07-27T00:00:00+09:00</published><updated>2018-07-27T00:00:00+09:00</updated><id>http://localhost:4000/aws/lamda%EC%82%AC%EC%9A%A9%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/aws/lamda%EC%82%AC%EC%9A%A9%EA%B8%B0/">&lt;h2 id=&quot;lamda를-써보자&quot;&gt;Lamda를 써보자&lt;/h2&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">How to use AWS Lamda.</summary></entry><entry><title type="html">Fastlane으로 빌드 자동화 설정하기</title><link href="http://localhost:4000/ios/ios-%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94-fastlane-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Fastlane으로 빌드 자동화 설정하기" /><published>2017-09-18T00:00:00+09:00</published><updated>2017-09-18T00:00:00+09:00</updated><id>http://localhost:4000/ios/%5Bios%5D%20%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%20fastlane%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/ios/ios-%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94-fastlane-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/">&lt;p&gt;외주 개발을 하게 되면서 서로 다른 애플 개발자 계정으로 enterprise, adhoc빌드, 스토어 업로드를 처리하다보니&lt;/p&gt;
-
-&lt;p&gt;빌드를 내는데 걸리는 시간이 많아졌고, 상당히 귀찮은 작업이 되었다.&lt;/p&gt;
-
-&lt;p&gt;당시 개발하던 mac의 사양도 높지 않아서 빌드속도도 느릴뿐더러 xcode 스토어 업로드에서 마지막에 알수없는 에러가 발생하였는데&lt;/p&gt;
-
-&lt;p&gt;한시간 넘게 계속 재시도하니까 업로드에 성공한적도 있었다.&lt;/p&gt;
-
-&lt;p&gt;fastlane을 사용하면 이러한 문제도 해결할 수 있고, 추가적으로 좋은 기능들도 이용할 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;fastlane 설치 및 파일설명&lt;/li&gt;
-  &lt;li&gt;Appfile&lt;/li&gt;
-  &lt;li&gt;.env&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Fastfile&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Action&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Plugin&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;build multiple targets with a single command&lt;/li&gt;
-  &lt;li&gt;get version string&lt;/li&gt;
-  &lt;li&gt;slack message&lt;/li&gt;
-  &lt;li&gt;appicon with badge&lt;/li&gt;
-  &lt;li&gt;upload ipa and plist to the server&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;##fastlane 설치&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;터미널에서 다음 명령어를 입력한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;sudo gem install fastlane –verbose`&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;해당 프로젝트로 이동한 후 다음 명령어를 입력한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fastlane init&lt;/code&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;생성된 Appfile, Fastfile, .env파일을 작성한다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Appfile에서 애플 개발자 계정을 설정하고 Fastfile로 빌드할 lane을 작성한다.(가장 중요!)&lt;/p&gt;
-
-&lt;p&gt;.env파일은 전역변수를 설정하여 Fastfile에서 편리하게 사용할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;##파일 설정&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Appfile&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;여러 개발자계정으로 빌드를 할 경우에 Fastfile에서 설정한 lane이름으로 분기하여 id를 설정할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for_lane :first_lane do
-     app_identifier &quot;ONE&quot;
-     apple_id &quot;ONE&quot;
-     team_id &quot;ONE&quot;
-end
-
-for_lane :second_lane do
-     app_identifier &quot;TWO&quot;
-     apple_id &quot;TWO&quot;
-     team_id &quot;TWO&quot;
-end
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;.env&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;각각의 프로젝트에서 Fastfile을 다시 작성하는것보다 .env파일을 사용하여 프로젝트이름이나 url등을 변수로 선언하면&lt;/p&gt;
-
-&lt;p&gt;약간의 Fastfile을 수정하는것만으로 다른 프로젝트에서도 용이하게 사용할 수 있다.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  SLACK_URL=&quot;&quot;  # slack hook address
- 
-  RELEASE_TARGET=&quot;&quot;
-  ADHOC_TARGET=&quot;&quot;
-  ENTERPRISE_TARGET=&quot;&quot;
- 
-  # git checkout for removing badge
-  BADGE_REMOVE_COMMIT=&quot;../{PROJECT_LOCATION}/Assets.xcassets/AppIcon.appiconset&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;*- *Fastfile**&lt;/p&gt;
-
-&lt;p&gt;Fastfile은 lane시작 전에 수행할 코드를 넣는 &lt;code class=&quot;highlighter-rouge&quot;&gt;before_all do ~ end&lt;/code&gt;과 여러 lane들 그리고, lane작업 후에 호출되는&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;after_all do ~ end&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;error do ~ end&lt;/code&gt;로 구성할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;보통 before_all에 인증서 관련한 명령과 pod install수행 구문들을 넣어주고 after_all이나 error 에 슬랙 메시지, git관련 명령
-들을 수행하면 된다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;action&quot;&gt;Action&lt;/h2&gt;
-&lt;p&gt;Action은 Fastlane에서 기본적으로 내장되어있는 기능으로 test, build, screenshot, code signing등이 있다.
-https://docs.fastlane.tools/actions/&lt;/p&gt;
-
-&lt;h2 id=&quot;plugin&quot;&gt;Plugin&lt;/h2&gt;
-&lt;p&gt;플러그인은 부가적인 option이며 fastlane에서 자체적으로 제공하는것이 아니라 오픈소스 컨트리뷰터들이 만들어서 제공하는 기능이다.&lt;/p&gt;
-
-&lt;p&gt;사용가능한 플러그인 목록
-https://docs.fastlane.tools/plugins/available-plugins/&lt;/p&gt;
-
-&lt;p&gt;사용하려면 &lt;code class=&quot;highlighter-rouge&quot;&gt;fastlane add_plugin [plugin명]&lt;/code&gt; 으로 따로 설치해야한다.&lt;/p&gt;
-
-&lt;p&gt;fastlane은 루비로 되어있어서 루비를 잘 다룬다면 plugin을 만들어 쓸 수 있을 것 같다.&lt;/p&gt;
-
-&lt;p&gt;개인적으로 유용하게 쓰고 있는 plugin으로는 badge 인데 앱 아이콘이 비슷해서 헷갈리지 않도록 앱 아이콘에 뱃지를 달 수 있다
-https://github.com/HazAT/fastlane-plugin-badge&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane add_plugin badge
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;빌드실행&quot;&gt;빌드실행&lt;/h2&gt;
-
-&lt;p&gt;설정이 끝나고 터미널에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;fastlane [lane명]&lt;/code&gt; 을 입력하면 빌드가 시작된다.&lt;/p&gt;
-
-&lt;h4 id=&quot;ios-all&quot;&gt;ios all&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane all
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;ios-release&quot;&gt;ios release&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane release
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;ios-adhoc&quot;&gt;ios adhoc&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane adhoc
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;ios-enterprise&quot;&gt;ios enterprise&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fastlane enterprise
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;about-fastlane&quot;&gt;About Fastlane&lt;/h2&gt;
-&lt;p&gt;For more information about Fastlane -&amp;gt; https://fastlane.tools/&lt;/p&gt;
-
-&lt;p&gt;Fastlane github -&amp;gt; https://github.com/fastlane/fastlane&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="ios" /><summary type="html">지속적인 통합 Fastlane</summary></entry><entry><title type="html">[git] 자주 쓰는 git명령어</title><link href="http://localhost:4000/git/git-%EC%9E%90%EC%A3%BC-%EC%93%B0%EB%8A%94-git%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="alternate" type="text/html" title="[git] 자주 쓰는 git명령어" /><published>2017-09-08T00:00:00+09:00</published><updated>2017-09-08T00:00:00+09:00</updated><id>http://localhost:4000/git/%5Bgit%5D%20%EC%9E%90%EC%A3%BC%20%EC%93%B0%EB%8A%94%20git%EB%AA%85%EB%A0%B9%EC%96%B4</id><content type="html" xml:base="http://localhost:4000/git/git-%EC%9E%90%EC%A3%BC-%EC%93%B0%EB%8A%94-git%EB%AA%85%EB%A0%B9%EC%96%B4/">&lt;aside class=&quot;sidebar__right&quot;&gt;
-&lt;nav class=&quot;toc&quot;&gt;
-    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fa fa-file-text&quot;&gt;&lt;/i&gt; On This Page&lt;/h4&gt;&lt;/header&gt;
-&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#커밋-되돌리기&quot; id=&quot;markdown-toc-커밋-되돌리기&quot;&gt;커밋 되돌리기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#원격-레포-커밋-되돌리기&quot; id=&quot;markdown-toc-원격-레포-커밋-되돌리기&quot;&gt;원격 레포 커밋 되돌리기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#commit했었던-곳으로-돌아가기&quot; id=&quot;markdown-toc-commit했었던-곳으로-돌아가기&quot;&gt;commit했었던 곳으로 돌아가기&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#원격-파일-삭제하기&quot; id=&quot;markdown-toc-원격-파일-삭제하기&quot;&gt;원격 파일 삭제하기&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-  &lt;/nav&gt;
-&lt;/aside&gt;
-
-&lt;h2 id=&quot;커밋-되돌리기&quot;&gt;커밋 되돌리기&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git reset HEAD^&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;이 명령을 사용하면 커밋 하나를 되돌릴 수 있다. 두개를 되돌리려면&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$git reset HEAD~2&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;원격-레포-커밋-되돌리기&quot;&gt;원격 레포 커밋 되돌리기&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git push origin +ios&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;이렇게 +를 붙여주면 경고는 무시하고 데이터가 손실되도 push한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;commit했었던-곳으로-돌아가기&quot;&gt;commit했었던 곳으로 돌아가기&lt;/h2&gt;
-&lt;p&gt;먼저&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git reflog&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;로 해당 HEAD번호를 확인한다.
-￼&lt;/p&gt;
-
-&lt;p&gt;ex) 배너 예외처리로 돌아가기&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2017-09-08-post1/1.png?raw=true&amp;quot;&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git reset —hard HEAD@{21}&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;원격-파일-삭제하기&quot;&gt;원격 파일 삭제하기&lt;/h2&gt;
-
-&lt;p&gt;.gitignore를 올리기전에 xcuserstate 를 원격지로 푸시했다.
-이후에 필요없는 breakPoint같은 파일이 자꾸 깃 스테이지에 올라간다.&lt;/p&gt;
-
-&lt;p&gt;원격 저장소에 있는 파일을 지우려면 git 명령어를 통해 삭제 후 푸시를 해줘야 한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ git rm —cached [flileName]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;git rm 은 로컬과 원격을 모두 삭제하므로 —cached를 꼭 붙여줘야 한다.&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><category term="git" /><summary type="html">On This Page</summary></entry></feed>
+&lt;p&gt;타겟에 추가가 되지 않았던 이유는 다른 프로젝트에 있는 소스파일을 가져오면서 제대로 설정되지 않았던 것 같다.&lt;/p&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">Use of undeclared type</summary></entry><entry><title type="html">AWS Lamda 사용기</title><link href="http://localhost:4000/aws/lamda%EC%82%AC%EC%9A%A9%EA%B8%B0/" rel="alternate" type="text/html" title="AWS Lamda 사용기" /><published>2018-07-27T00:00:00+09:00</published><updated>2018-07-27T00:00:00+09:00</updated><id>http://localhost:4000/aws/lamda%EC%82%AC%EC%9A%A9%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/aws/lamda%EC%82%AC%EC%9A%A9%EA%B8%B0/">&lt;h2 id=&quot;lamda를-써보자&quot;&gt;Lamda를 써보자&lt;/h2&gt;</content><author><name>Jingyu</name><email>kjingyu91@gmail.com</email></author><summary type="html">How to use AWS Lamda.</summary></entry></feed>
