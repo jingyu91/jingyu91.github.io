@@ -69,7 +69,7 @@ frame을 하나씩 보낸다.
 
 연속해서 보낼 수 있는 양(window size)을 정해서 frame을 계속해서 보낸다.
 
-window size는 ACK를 받지 않아도 보낼 수 있는 프레임의 갯수를 의미한다. *Stop-and-wait*는 window size가 1인 슬라이딩 위도우 기법이라고 볼 수 있다.
+window size는 ACK를 받지 않아도 보낼 수 있는 프레임의 갯수를 의미한다. *Stop-and-wait*는 window size가 1인 슬라이딩 윈도우 기법이라고 볼 수 있다.
 
 전송측에서는 프레임을 전송할때마다 왼쪽 경계를 오른쪽으로 이동시키고, 전송한 프레임에 대한 ACK를 받을때마다 윈도우의 오른쪽 경계를 오른쪽으로 이동시킨다.
 
@@ -81,12 +81,12 @@ window size는 ACK를 받지 않아도 보낼 수 있는 프레임의 갯수를 
 
 오류 제어기법은 오류 검출과 재전송 기능을 한다.
 
-ARQ(Automatic Repeat Request) : 프레임이 손상될 경우 재전송을 통해 오류를 복수한다.
+ARQ(Automatic Repeat Request) : 프레임이 손상될 경우 재전송을 통해 오류를 복구한다.
 
 이전에 살펴본 **Flow control** 에서 *stop-and-wait*는 정지-대기 ARQ를 사용하여 전송한 프레임의 복사본을 유지하여 NAK를 받거나 ACK가 유실되면 timeout 발생으로 재전송한다.
 
-*sliding-window*는 *Go-back-n ARQ*나 *Selective-reject ARQ*를 사용하여 구현한다.
+*sliding-window*는 *Go-back-n ARQ*나 *Selective-repeat ARQ*를 사용하여 구현한다.
 
 *Go-back-n ARQ*는 손실된 프레임이 발견될 경우 마지막에 ACK를 제대로 받은 프레임 이후로 다시 모든 프레임을 재전송하는 기법이다. 제대로 받은 프레임도 다시 재전송하기 때문에 구현은 단순하지만 비효율적인 문제가 발생한다.
 
-*Selective-reject ARQ*는 이러한 단점을 극복하였지만 별도의 버퍼와 재정렬이 필요하여 구현이 복잡하다.
+*Selective-repeat ARQ*는 이러한 단점을 극복하였지만 별도의 버퍼와 재정렬이 필요하여 구현이 복잡하다.
