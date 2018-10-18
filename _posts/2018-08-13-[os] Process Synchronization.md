@@ -44,7 +44,7 @@ x = x + 1; // critical section
 <u>critical section</u>을 피하는 방법을 소프트웨어적으로 해결하기 위해선 다음과 같은 원칙을 만족시켜야 한다.
 
 1. Mutual Exclusion (상호배제) : 동시에 진입할 수 없다.
-2. Progress (진행) : 진행이 안된다.
+2. Progress (진행) : 크리티컬 섹션에 아무도 없을때 원하면 프로세스는 진입할 수 있어야한다.
 3. Bounded Waiting (유한대기) : 기다리는 시간이 유한해야 한다. (starvation을 막아야 한다) 
 
 
@@ -153,6 +153,8 @@ do {
     lock = false;
 }
 ```
+
+하지만 3번 bounded waiting 문제를 해결하지 못한다. 이 문제를 해결하려면 critical section 후 기다리는 프로세스를 검사해야하고 추가적인 배열이 필요한데 실질적으로 하드웨어적으로 지원하기 힘들다고 한다.
 
 
 
@@ -320,6 +322,10 @@ if (readcount == 1){
     P(db); // Writer의 접근을 막는 lock (만약 1이 아니라 1보다 크다면 이전에 이미 lock이 걸려있음)
 }
 V(mutex);
+
+reading...
+
+P(mutex); // readcount 통제
 readcount--;
 if (readcount == 0) {
     V(db); // Writer의 접근을 허용
@@ -327,7 +333,7 @@ if (readcount == 0) {
 V(mutex);
 ```
 
-하지만 Reader가 끊임없이 read를 시도하면 Writer는 Starvation이 발생할 수 있다.
+하지만 Reader가 끊임없이 read를 시도하면 Writer는 Starvation(bounded waiting)이 발생할 수 있다.
 
 때문에 일정시간을 기준으로만 Reader를 받고 Writer에게 기회를 주는 방식으로 해결할 수 있다.
 
