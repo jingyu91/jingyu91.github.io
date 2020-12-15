@@ -1,2 +1,11 @@
-{ "applinks": { "apps": [], "details": [{ "1434511619": "RKCDCG35JA", "components": [{ "/" : "", "?": { "parameter": "something" } }] }] } }
-
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+    {
+      "appID": "RKCDCG35JA.com.korbit.exchange",
+      "paths": ["*"]
+    }
+    ]
+  }
+}
