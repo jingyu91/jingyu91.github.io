@@ -8,7 +8,7 @@ category: ios
 
 # [WatchOS]Complication
 
-Complication은 워치 페이스에서 빠르게 해당 앱을 실행할 수 있는 기능이다.
+Complication은 워치 페이스에서 빠르게 해당 앱을 실행할 수 있는 기능이다..
 
 워치 페이스에서 시간에 따라 데이터를 다르게 표기할 수 있다.
 
