@@ -1,11 +1,1 @@
-{
-  "applinks": {
-    "apps": [],
-    "details": [
-    {
-      "appID": "RKCDCG35JA.com.korbit.exchange",
-      "paths": ["*"]
-    }
-    ]
-  }
-}
+{"applinks":{"apps":[],"details":[{"appID":"RKCDCG35JA.com.korbit.exchange.uat","paths":["NOT /_/*","/*"]},{"appID":"RKCDCG35JA.com.korbit.exchange","paths":["NOT /_/*","/*"]}]}}
